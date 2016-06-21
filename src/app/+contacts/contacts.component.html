@@ -1,0 +1,28 @@
+<div class="new-contact-form" *ngIf="showForm">
+    <md-card>
+        <md-card-title>Add a new contact</md-card-title>
+        <md-card-content>
+            <form [ngFormModel]="addContactForm">
+                <md-input placeholder="Nome" [ngFormControl]="addContactForm.controls['name']"></md-input>
+                <md-input placeholder="Cognome" [ngFormControl]="addContactForm.controls['surname']"></md-input>
+                <md-input placeholder="Email" [ngFormControl]="addContactForm.controls['email']"></md-input>
+                <md-input placeholder="Foto Url" [ngFormControl]="addContactForm.controls['photo']"></md-input>
+                <md-input placeholder="Descrizione" [ngFormControl]="addContactForm.controls['description']"></md-input>
+            </form>
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-raised-button color="accent" (click)="addContact()">Aggiungi</button>
+        </md-card-actions>
+    </md-card>
+</div>
+<div class="card-container">
+    <md-card *ngFor="let contact of contacts">
+        <img md-card-avatar [alt]="contact.name" [src]="contact.photo">
+        <md-card-title>{{ contact.name }} {{ contact.surname }}</md-card-title>
+        <md-card-subtitle>{{ contact.email }}</md-card-subtitle>
+        <md-card-content>{{ contact.description }}</md-card-content>
+        <md-card-actions align="end">
+            <button md-raised-button color="primary">Vota</button>
+        </md-card-actions>
+    </md-card>
+</div>

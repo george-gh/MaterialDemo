@@ -1,0 +1,10 @@
+md-sidenav-layout {
+    background: rgba(0,0,0,0.08);
+}
+
+[md-fab] {
+  position: absolute;
+  right: 3%;
+  top: 34px;
+  z-index: 1;
+}

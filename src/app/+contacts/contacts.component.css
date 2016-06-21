@@ -1,0 +1,22 @@
+.secondary {
+  color: rgba(0,0,0,0.54);
+}
+
+md-card {
+  width: 300px;
+  box-sizing: border-box;
+  margin: 16px;
+}
+
+md-card .new-contact-card {
+    width: 600px !important;
+}
+
+.card-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.new-contact-form {
+    display: flex;
+}

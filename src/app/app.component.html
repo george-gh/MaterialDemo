@@ -1,3 +1,32 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a md-list-item (click)="navigateTo('contacts'); sidenav.close()">
+        <md-icon md-list-icon>
+          <i class="material-icons">account_balance</i>
+        </md-icon>
+        <span md-line>Contacts</span>
+      </a>
+      <a md-list-item (click)="navigateTo('addContact'); sidenav.close()">
+        <md-icon md-list-icon>
+          <i class="material-icons">account_circle</i>
+        </md-icon>
+        <span md-line>Info</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.open()">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+      </svg>
+    </button>
+    {{ title }}
+    <button md-fab (click)="canShowForm = !canShowForm" >
+      <md-icon>add</md-icon>
+    </button>
+  </md-toolbar>
+
+  <my-contacts [showForm]="canShowForm"></my-contacts>
+
+</md-sidenav-layout>
